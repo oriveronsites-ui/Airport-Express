@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AirportExpressHero } from "@/components/AirportExpressHero";
-import { HeroSectionTransition } from "@/components/HeroSectionTransition";
+import { FirstSectionReveal } from "@/components/FirstSectionReveal";
 import { BookingLink } from "@/components/BookingLink";
 import { RegionDiagram } from "@/components/RegionDiagram";
 import { site } from "@/lib/site";
@@ -62,13 +62,17 @@ const questions = [
 export default function HomePage() {
   return (
     <>
-      <HeroSectionTransition hero={<AirportExpressHero />}>
+      <FirstSectionReveal hero={<AirportExpressHero />}>
         <section aria-labelledby="services-title" className="section section--arrival">
           <div className="container">
             <div className="section-heading">
               <div>
                 <p className="eyebrow">One ride, different reasons</p>
-                <h2 id="services-title">Wherever you’re headed, start here.</h2>
+                <h2 id="services-title">
+                  <span className="section-heading__title-mask">
+                    <span>Wherever you’re headed, start here.</span>
+                  </span>
+                </h2>
               </div>
               <p className="section-heading__copy">
                 Airport Express specializes in airport transportation and also takes trips beyond
@@ -89,7 +93,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </HeroSectionTransition>
+      </FirstSectionReveal>
 
       <section aria-labelledby="area-title" className="section section--canvas">
         <div className="container region-section">

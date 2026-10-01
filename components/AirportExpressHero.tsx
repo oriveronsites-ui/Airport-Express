@@ -65,8 +65,13 @@ export function AirportExpressHero() {
     return () => window.clearTimeout(timer);
   }, [activeScene, motionEnabled, nextScene, paused]);
 
-  const startCrossfade = () => {
-    window.requestAnimationFrame(() => setCrossfadeActive(true));
+  const startCrossfade = (image: HTMLImageElement) => {
+    const begin = () => window.requestAnimationFrame(() => setCrossfadeActive(true));
+    if (typeof image.decode === "function") {
+      void image.decode().catch(() => undefined).then(begin);
+      return;
+    }
+    begin();
   };
 
   const finishCrossfade = (propertyName: string) => {
@@ -103,7 +108,7 @@ export function AirportExpressHero() {
               className="hero__photo"
               fill
               loading="eager"
-              onLoad={startCrossfade}
+              onLoad={(event) => startCrossfade(event.currentTarget)}
               quality={86}
               sizes="100vw"
               src={scenes[nextScene].src}
