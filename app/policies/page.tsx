@@ -26,9 +26,9 @@ export default function PoliciesPage() {
         <div className="container content-split">
           <div>
             <p className="eyebrow">Ask before you book</p>
-            <h2 data-motion="mask">Get the terms that apply to your ride.</h2>
+            <h2>Get the terms that apply to your ride.</h2>
           </div>
-          <div className="content-split__body" data-motion="rise">
+          <div className="content-split__body">
             <p>
               Older Airport Express pages contain policy details that need current confirmation.
               Contact the team about cancellation or refund terms, airport changes, luggage, child

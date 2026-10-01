@@ -24,7 +24,7 @@ export function ServicePage({
           <PageIntro eyebrow={eyebrow} title={title}>
             <p>{description}</p>
           </PageIntro>
-          <div className="hero__actions" data-motion="rise">
+          <div className="hero__actions">
             <BookingLink custom={custom}>
               {custom ? "Ask about a trip" : "Check current options"}
             </BookingLink>
@@ -38,14 +38,12 @@ export function ServicePage({
         <div className="container content-split">
           <div>
             <p className="eyebrow">Plan the ride</p>
-            <h2 data-motion="mask">Start with the trip you have in mind.</h2>
+            <h2>Start with the trip you have in mind.</h2>
           </div>
           <div className="content-split__body">
             <ul className="service-detail-list">
               {details.map((detail) => (
-                <li data-motion="rise" key={detail}>
-                  {detail}
-                </li>
+                <li key={detail}>{detail}</li>
               ))}
             </ul>
             <div className="callout-line">
@@ -62,9 +60,9 @@ export function ServicePage({
           <div className="final-cta">
             <div>
               <p className="eyebrow">Airport Express · San Francisco</p>
-              <h2 data-motion="mask">Ready to plan your trip?</h2>
+              <h2>Ready to plan your trip?</h2>
             </div>
-            <div className="final-cta__actions" data-motion="rise">
+            <div className="final-cta__actions">
               <BookingLink custom={custom} />
               <p>
                 Or call <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a>

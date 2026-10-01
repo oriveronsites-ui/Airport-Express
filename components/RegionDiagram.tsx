@@ -1,9 +1,8 @@
-export function RegionDiagram({ motion = false }: { motion?: boolean }) {
+export function RegionDiagram() {
   return (
     <div
       aria-label="Illustrative route diagram showing SFO, San Francisco, OAK, and a destination to confirm. It does not show exact routes or boundaries."
       className="region-diagram"
-      data-motion={motion ? "image" : undefined}
       role="img"
     >
       <span className="region-diagram__node">SFO</span>

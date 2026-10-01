@@ -11,13 +11,9 @@ export function PageIntro({
 }) {
   return (
     <header className="page-intro">
-      <p className="eyebrow" data-motion="rise">
-        {eyebrow}
-      </p>
-      <h1 data-motion="mask">{title}</h1>
-      <div className="page-intro__copy" data-motion="rise">
-        {children}
-      </div>
+      <p className="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <div className="page-intro__copy">{children}</div>
     </header>
   );
 }

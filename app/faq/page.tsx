@@ -59,14 +59,14 @@ export default function FaqPage() {
         <div className="container content-split">
           <div>
             <p className="eyebrow">Good to know</p>
-            <h2 data-motion="mask">Before you ride.</h2>
-            <p className="section-heading__copy" data-motion="rise">
+            <h2>Before you ride.</h2>
+            <p className="section-heading__copy">
               For current rates and availability, use the reservation system or call {site.phoneDisplay}.
             </p>
           </div>
-            <div className="faq-list">
-              {questions.map((item) => (
-                <details data-motion="rise" key={item.question}>
+          <div className="faq-list">
+            {questions.map((item) => (
+              <details key={item.question}>
                 <summary>{item.question}</summary>
                 <p>{item.answer}</p>
               </details>

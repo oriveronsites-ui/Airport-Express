@@ -26,18 +26,18 @@ export default function ContactPage() {
       <section className="page-section">
         <div className="container">
           <div className="contact-options">
-            <section className="contact-option" data-motion="rise">
+            <section className="contact-option">
               <h2>Call</h2>
               <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a>
               <p>For reservations, pickup help, or to ask about a destination.</p>
             </section>
-            <section className="contact-option" data-motion="rise">
+            <section className="contact-option">
               <h2>Email</h2>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <p>Share your route and what you need help arranging.</p>
             </section>
           </div>
-          <div className="callout-line" data-motion="rise">
+          <div className="callout-line">
             <p>Want to check current rates and options?</p>
             <BookingLink />
           </div>
@@ -47,9 +47,9 @@ export default function ContactPage() {
         <div className="container content-split">
           <div>
             <p className="eyebrow">Need quick help?</p>
-            <h2 data-motion="mask">Pick up the phone.</h2>
+            <h2>Pick up the phone.</h2>
           </div>
-          <div className="content-split__body" data-motion="rise">
+          <div className="content-split__body">
             <p>
               The current Airport Express website lists {site.phoneDisplay} as its primary contact
               number. If you are already at the airport, keep your reservation details nearby when you
