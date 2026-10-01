@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type TransitionEvent } from "react";
 import { BookingLink } from "@/components/BookingLink";
 
 const scenes = [
@@ -30,14 +30,24 @@ const scenes = [
     city: "San Francisco",
     position: "center 54%",
   },
+  {
+    src: "/images/hero/sfo-international-terminal.webp",
+    label: "SFO",
+    city: "San Francisco International",
+    position: "62% 55%",
+  },
 ] as const;
 
 export function AirportExpressHero() {
-  const [activeScene, setActiveScene] = useState(0);
-  const [nextScene, setNextScene] = useState<number | null>(null);
+  const [layerScenes, setLayerScenes] = useState<[number, number]>([0, 1]);
+  const [activeLayer, setActiveLayer] = useState<0 | 1>(0);
+  const [decodedScene, setDecodedScene] = useState<number | null>(null);
   const [crossfadeActive, setCrossfadeActive] = useState(false);
   const [motionEnabled, setMotionEnabled] = useState(false);
   const [paused, setPaused] = useState(false);
+  const activeScene = layerScenes[activeLayer];
+  const incomingLayer = (1 - activeLayer) as 0 | 1;
+  const nextScene = (activeScene + 1) % scenes.length;
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -45,7 +55,6 @@ export function AirportExpressHero() {
       const enabled = !preference.matches;
       setMotionEnabled(enabled);
       if (!enabled) {
-        setNextScene(null);
         setCrossfadeActive(false);
       }
     };
@@ -56,17 +65,19 @@ export function AirportExpressHero() {
   }, []);
 
   useEffect(() => {
-    if (!motionEnabled || paused || nextScene !== null) return;
+    if (!motionEnabled || paused || decodedScene !== nextScene || crossfadeActive) return;
 
     const timer = window.setTimeout(() => {
-      setNextScene((activeScene + 1) % scenes.length);
+      setCrossfadeActive(true);
     }, 6500);
 
     return () => window.clearTimeout(timer);
-  }, [activeScene, motionEnabled, nextScene, paused]);
+  }, [crossfadeActive, decodedScene, motionEnabled, nextScene, paused]);
 
-  const startCrossfade = (image: HTMLImageElement) => {
-    const begin = () => window.requestAnimationFrame(() => setCrossfadeActive(true));
+  const markDecoded = (image: HTMLImageElement, sceneIndex: number) => {
+    const begin = () => {
+      if (image.naturalWidth > 0) setDecodedScene(sceneIndex);
+    };
     if (typeof image.decode === "function") {
       void image.decode().catch(() => undefined).then(begin);
       return;
@@ -74,48 +85,51 @@ export function AirportExpressHero() {
     begin();
   };
 
-  const finishCrossfade = (propertyName: string) => {
-    if (propertyName !== "opacity" || nextScene === null) return;
-    setActiveScene(nextScene);
-    setNextScene(null);
+  const finishCrossfade = (event: TransitionEvent<HTMLDivElement>, layerIndex: 0 | 1) => {
+    if (
+      event.target !== event.currentTarget ||
+      event.propertyName !== "opacity" ||
+      layerIndex !== incomingLayer ||
+      !crossfadeActive
+    ) return;
+    setLayerScenes((current) => {
+      const updated: [number, number] = [...current];
+      updated[activeLayer] = (nextScene + 1) % scenes.length;
+      return updated;
+    });
+    setActiveLayer(layerIndex);
+    setDecodedScene(null);
     setCrossfadeActive(false);
   };
 
   return (
     <section aria-labelledby="hero-title" className="hero">
       <div aria-hidden="true" className="hero__scenery">
-        <div className={`hero__photo-layer is-active${crossfadeActive ? " is-fading" : ""}`}>
-          <Image
-            key={`scene-${activeScene}`}
-            alt=""
-            className="hero__photo"
-            fill
-            priority
-            quality={86}
-            sizes="100vw"
-            src={scenes[activeScene].src}
-            style={{ objectPosition: scenes[activeScene].position }}
-          />
-        </div>
-        {nextScene !== null && (
-          <div
-            className={`hero__photo-layer${crossfadeActive ? " is-incoming" : ""}`}
-            onTransitionEnd={(event) => finishCrossfade(event.propertyName)}
-          >
-            <Image
-              key={`scene-next-${nextScene}`}
-              alt=""
-              className="hero__photo"
-              fill
-              loading="eager"
-              onLoad={(event) => startCrossfade(event.currentTarget)}
-              quality={86}
-              sizes="100vw"
-              src={scenes[nextScene].src}
-              style={{ objectPosition: scenes[nextScene].position }}
-            />
-          </div>
-        )}
+        {layerScenes.map((sceneIndex, layerIndex) => {
+          const isActive = layerIndex === activeLayer;
+          const isIncoming = motionEnabled && layerIndex === incomingLayer;
+          return (
+            <div
+              className={`hero__photo-layer${isActive ? ` is-active${crossfadeActive ? " is-fading" : ""}` : ""}${isIncoming && crossfadeActive ? " is-incoming" : ""}`}
+              key={`photo-layer-${layerIndex}`}
+              onTransitionEnd={(event) => finishCrossfade(event, layerIndex as 0 | 1)}
+            >
+              <Image
+                key={`scene-${sceneIndex}`}
+                alt=""
+                className="hero__photo"
+                fill
+                priority={isActive && sceneIndex === 0}
+                loading={isActive || isIncoming ? "eager" : "lazy"}
+                onLoad={(event) => markDecoded(event.currentTarget, sceneIndex)}
+                quality={86}
+                sizes="100vw"
+                src={scenes[sceneIndex].src}
+                style={{ objectPosition: scenes[sceneIndex].position }}
+              />
+            </div>
+          );
+        })}
         <div className="hero__shade" />
       </div>
 

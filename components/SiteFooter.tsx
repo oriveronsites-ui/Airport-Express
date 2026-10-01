@@ -47,6 +47,13 @@ export function SiteFooter() {
         <div className="site-footer__bottom">
           <span>Airport Express · San Francisco, California</span>
           <span>Current trip terms and pickup details are confirmed through Airport Express.</span>
+          <span>
+            SFO international terminal photo by Håkan Dahlström, licensed under{" "}
+            <a href="https://creativecommons.org/licenses/by/2.0/" rel="noreferrer" target="_blank">
+              CC BY 2.0
+            </a>
+            ; cropped, resized, and converted to WebP. <a href="https://commons.wikimedia.org/wiki/File:SFO_international_terminal.jpg" rel="noreferrer" target="_blank">Source</a>.
+          </span>
         </div>
       </div>
     </footer>

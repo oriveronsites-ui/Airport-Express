@@ -413,7 +413,7 @@ p {
 
 .hero__photo-layer {
   opacity: 0;
-  transition: opacity 1300ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: opacity 1300ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .hero__photo-layer.is-active {
@@ -431,6 +431,12 @@ p {
 .hero__photo {
   object-fit: cover;
   animation: hero-photo-drift 7.8s ease-in-out both;
+  animation-play-state: paused;
+}
+
+.hero__photo-layer.is-active .hero__photo,
+.hero__photo-layer.is-incoming .hero__photo {
+  animation-play-state: running;
 }
 
 .hero__shade {
