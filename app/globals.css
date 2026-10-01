@@ -237,6 +237,12 @@ p {
 .brand-link__image {
   width: min(201px, 40vw);
   height: auto;
+  transition: opacity 180ms ease;
+}
+
+.brand-link:hover .brand-link__image,
+.brand-link:focus-visible .brand-link__image {
+  opacity: 0.92;
 }
 
 .primary-navigation {

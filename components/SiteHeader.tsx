@@ -20,7 +20,28 @@ export function SiteHeader() {
           aria-label="Airport Express home"
           className="brand-link"
           href="/"
-          onClick={() => setMenuOpen(false)}
+          onClick={(event) => {
+            setMenuOpen(false);
+
+            const isUnmodifiedClick =
+              event.button === 0 &&
+              !event.metaKey &&
+              !event.ctrlKey &&
+              !event.shiftKey &&
+              !event.altKey;
+
+            if (!isHome || !isUnmodifiedClick) return;
+
+            event.preventDefault();
+            const reducedMotion = window.matchMedia(
+              "(prefers-reduced-motion: reduce)",
+            ).matches;
+
+            window.scrollTo({
+              top: 0,
+              behavior: reducedMotion ? "auto" : "smooth",
+            });
+          }}
         >
           <Image
             alt="Airport Express"
