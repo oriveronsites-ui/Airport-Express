@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { MobileActionBar } from "@/components/MobileActionBar";
+import { MotionObserver } from "@/components/MotionObserver";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/lib/site";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <SiteHeader />
         <main id="main-content">{children}</main>
+        <MotionObserver />
         <SiteFooter />
         <MobileActionBar />
         <script

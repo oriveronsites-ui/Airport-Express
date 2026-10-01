@@ -26,9 +26,9 @@ export default function AboutPage() {
         <div className="container content-split">
           <div>
             <p className="eyebrow">A practical way to get around</p>
-            <h2>Airport trips are one part of the work.</h2>
+            <h2 data-motion="mask">Airport trips are one part of the work.</h2>
           </div>
-          <div className="content-split__body">
+          <div className="content-split__body" data-motion="rise">
             <p>
               Some trips start or end at SFO or OAK. Others stay local, cross the Bay, or need more
               planning for a group. Airport Express provides a clear place to begin for each kind of
@@ -45,9 +45,9 @@ export default function AboutPage() {
         <div className="container content-split">
           <div>
             <p className="eyebrow">The right next step</p>
-            <h2>Keep the trip details simple.</h2>
+            <h2 data-motion="mask">Keep the trip details simple.</h2>
           </div>
-          <div className="content-split__body">
+          <div className="content-split__body" data-motion="rise">
             <p>
               Current availability, pickup instructions, and service details should be confirmed for
               each reservation. Airport Express can help by phone if the website does not answer a

@@ -97,7 +97,7 @@ export default function HomePage() {
 
       <section aria-labelledby="area-title" className="section section--canvas">
         <div className="container region-section">
-          <div className="region-section__copy">
+          <div className="region-section__copy" data-motion="rise">
             <p className="eyebrow">Where we go</p>
             <h2 id="area-title">The airport is one stop in a much bigger region.</h2>
             <p>
@@ -108,7 +108,7 @@ export default function HomePage() {
               Explore the service area <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <RegionDiagram />
+          <RegionDiagram motion />
         </div>
       </section>
 
@@ -116,10 +116,10 @@ export default function HomePage() {
         <div className="container">
           <div className="pickup-band">
             <div>
-              <p className="eyebrow">Airport transportation</p>
-              <h2 id="airport-title">A clear next step when you land.</h2>
+              <p className="eyebrow" data-motion="rise">Airport transportation</p>
+              <h2 data-motion="mask" id="airport-title">A clear next step when you land.</h2>
             </div>
-            <div className="pickup-band__copy">
+            <div className="pickup-band__copy" data-motion="rise">
               <p>
                 Pickup details can change by airport and reservation. Check the instructions in your
                 current confirmation. If you need help at SFO or OAK, call Airport Express.
@@ -140,23 +140,25 @@ export default function HomePage() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">How it works</p>
-              <h2 id="steps-title">A simple way to plan the ride.</h2>
+              <h2 data-motion="mask" id="steps-title">
+                A simple way to plan the ride.
+              </h2>
             </div>
-            <p className="section-heading__copy">
+            <p className="section-heading__copy" data-motion="rise">
               Use the current reservation system for available trips. For a destination or itinerary
               that needs a conversation, the Airport Express team is a phone call away.
             </p>
           </div>
           <div className="process-grid">
-            <article className="process-step">
+            <article className="process-step" data-motion="rise">
               <h3>Choose your trip</h3>
               <p>Airport, point-to-point, local, regional, group, or charter transportation.</p>
             </article>
-            <article className="process-step">
+            <article className="process-step" data-motion="rise">
               <h3>Book or ask</h3>
               <p>Check current options online, or call to discuss a custom destination or plan.</p>
             </article>
-            <article className="process-step">
+            <article className="process-step" data-motion="rise">
               <h3>Check pickup details</h3>
               <p>Use the latest trip confirmation for directions, and call if anything is unclear.</p>
             </article>
@@ -165,12 +167,16 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="groups-title" className="section">
-        <div className="container heritage-split">
-          <div>
-            <p className="eyebrow">Groups and charters</p>
-            <h2 id="groups-title">A trip with more moving parts?</h2>
+          <div className="container heritage-split">
+            <div>
+              <p className="eyebrow" data-motion="rise">
+                Groups and charters
+              </p>
+              <h2 data-motion="mask" id="groups-title">
+                A trip with more moving parts?
+              </h2>
           </div>
-          <div className="heritage-split__copy">
+          <div className="heritage-split__copy" data-motion="rise">
             <p>
               Tell Airport Express where you’re going and what you need to coordinate. The team can
               confirm whether the trip fits its current service and help with the right next step.
@@ -184,10 +190,14 @@ export default function HomePage() {
         <div className="container">
           <div className="heritage-split">
             <div>
-              <p className="eyebrow">Airport Express</p>
-              <h2 id="about-title">San Francisco transportation, beyond the airport.</h2>
+              <p className="eyebrow" data-motion="rise">
+                Airport Express
+              </p>
+              <h2 data-motion="mask" id="about-title">
+                San Francisco transportation, beyond the airport.
+              </h2>
             </div>
-            <div className="heritage-split__copy">
+            <div className="heritage-split__copy" data-motion="rise">
               <p>
                 Airport Express is a San Francisco transportation company with airport transportation
                 as a specialty. It also offers private, point-to-point, local, regional, group, and
@@ -197,15 +207,15 @@ export default function HomePage() {
                 About Airport Express <span aria-hidden="true">→</span>
               </Link>
               <div className="trust-row">
-                <div>
+                <div data-motion="rise">
                   <h3>Airport rides</h3>
                   <p>Current site lists SFO and OAK transportation.</p>
                 </div>
-                <div>
+                <div data-motion="rise">
                   <h3>More than airport trips</h3>
                   <p>Ask about local, regional, and point-to-point rides.</p>
                 </div>
-                <div>
+                <div data-motion="rise">
                   <h3>Talk to a person</h3>
                   <p>Call when you need help confirming a trip or pickup.</p>
                 </div>
@@ -218,18 +228,22 @@ export default function HomePage() {
       <section aria-labelledby="faq-title" className="section">
         <div className="container content-split">
           <div>
-            <p className="eyebrow">Good to know</p>
-            <h2 id="faq-title">A few quick answers.</h2>
-            <p className="section-heading__copy">
+            <p className="eyebrow" data-motion="rise">
+              Good to know
+            </p>
+            <h2 data-motion="mask" id="faq-title">
+              A few quick answers.
+            </h2>
+            <p className="section-heading__copy" data-motion="rise">
               For current rates, pickup steps, and trip terms, use the reservation page or call.
             </p>
-            <Link className="text-link" href="/faq">
+            <Link className="text-link" data-motion="rise" href="/faq">
               All frequently asked questions <span aria-hidden="true">→</span>
             </Link>
           </div>
           <div className="faq-list">
             {questions.map((item) => (
-              <details key={item.question}>
+              <details data-motion="rise" key={item.question}>
                 <summary>{item.question}</summary>
                 <p>{item.answer}</p>
               </details>
@@ -241,10 +255,14 @@ export default function HomePage() {
       <section aria-labelledby="final-title" className="section section--canvas">
         <div className="container final-cta">
           <div>
-            <p className="eyebrow">Ready when you are</p>
-            <h2 id="final-title">Let’s get your next trip moving.</h2>
+            <p className="eyebrow" data-motion="rise">
+              Ready when you are
+            </p>
+            <h2 data-motion="mask" id="final-title">
+              Let’s get your next trip moving.
+            </h2>
           </div>
-          <div className="final-cta__actions">
+          <div className="final-cta__actions" data-motion="rise">
             <BookingLink />
             <p>Or call <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a></p>
           </div>

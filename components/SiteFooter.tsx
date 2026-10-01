@@ -17,7 +17,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
         <div className="site-footer__top">
-          <div className="site-footer__brand">
+          <div className="site-footer__brand" data-motion="rise">
             <Link aria-label="Airport Express home" href="/">
               <Image
                 alt="Airport Express"
@@ -29,13 +29,13 @@ export function SiteFooter() {
             <p>San Francisco transportation, from airport rides to trips around the Bay.</p>
           </div>
 
-          <div className="site-footer__contact">
+          <div className="site-footer__contact" data-motion="rise">
             <span className="eyebrow eyebrow--light">Talk with our team</span>
             <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a>
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </div>
 
-          <nav aria-label="Footer navigation" className="site-footer__links">
+          <nav aria-label="Footer navigation" className="site-footer__links" data-motion="rise">
             {footerLinks.map((item) => (
               <Link href={item.href} key={item.href}>
                 {item.label}

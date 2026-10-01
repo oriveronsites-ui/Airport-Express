@@ -26,9 +26,9 @@ export default function PickupInformationPage() {
         <div className="container content-split">
           <div>
             <p className="eyebrow">Before you head to the pickup point</p>
-            <h2>Check your current trip confirmation.</h2>
+            <h2 data-motion="mask">Check your current trip confirmation.</h2>
           </div>
-          <div className="content-split__body">
+          <div className="content-split__body" data-motion="rise">
             <ul className="service-detail-list service-detail-list--single">
               <li>Confirm the airport and pickup instructions for your specific reservation.</li>
               <li>Keep your booking details available when you contact the dispatcher.</li>
@@ -45,7 +45,7 @@ export default function PickupInformationPage() {
       </section>
       <section className="page-section section--canvas">
         <div className="container">
-          <div className="notice">
+            <div className="notice" data-motion="image">
             <p>
               Older pickup instructions online may not reflect current airport procedures. Follow
               your current confirmation or call Airport Express before relying on a location listed

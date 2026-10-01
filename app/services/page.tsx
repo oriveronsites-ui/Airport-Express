@@ -45,7 +45,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="service-list">
             {services.map(([title, href, copy]) => (
-              <Link className="service-row" href={href} key={title}>
+              <Link className="service-row" data-motion="rise" href={href} key={title}>
                 <h2 className="service-row__title">{title}</h2>
                 <span aria-hidden="true" className="service-row__arrow">
                   ↗

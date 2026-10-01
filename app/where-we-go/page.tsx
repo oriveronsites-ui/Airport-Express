@@ -26,7 +26,7 @@ export default function WhereWeGoPage() {
       </section>
       <section aria-label="Illustrative Airport Express service area" className="page-section">
         <div className="container region-section">
-          <div className="region-section__copy">
+          <div className="region-section__copy" data-motion="rise">
             <p className="eyebrow">One region, many kinds of trips</p>
             <h2>Airport, local, and regional rides.</h2>
             <p>
@@ -41,16 +41,16 @@ export default function WhereWeGoPage() {
               Call about a destination <span aria-hidden="true">→</span>
             </a>
           </div>
-          <RegionDiagram />
+          <RegionDiagram motion />
         </div>
       </section>
       <section className="page-section section--canvas">
         <div className="container content-split">
           <div>
             <p className="eyebrow">Not sure if your destination is covered?</p>
-            <h2>Tell the team where you need to go.</h2>
+            <h2 data-motion="mask">Tell the team where you need to go.</h2>
           </div>
-          <div className="content-split__body">
+          <div className="content-split__body" data-motion="rise">
             <p>
               Call Airport Express with your pickup location and destination. The team can confirm
               whether it fits the current operating area and explain the available next step.
