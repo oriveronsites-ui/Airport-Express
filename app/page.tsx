@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AirportExpressHero } from "@/components/AirportExpressHero";
+import { HeroSectionTransition } from "@/components/HeroSectionTransition";
 import { BookingLink } from "@/components/BookingLink";
 import { RegionDiagram } from "@/components/RegionDiagram";
 import { site } from "@/lib/site";
@@ -61,34 +62,34 @@ const questions = [
 export default function HomePage() {
   return (
     <>
-      <AirportExpressHero />
-
-      <section aria-labelledby="services-title" className="section">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">One ride, different reasons</p>
-              <h2 id="services-title">Wherever you’re headed, start here.</h2>
+      <HeroSectionTransition hero={<AirportExpressHero />}>
+        <section aria-labelledby="services-title" className="section section--arrival">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">One ride, different reasons</p>
+                <h2 id="services-title">Wherever you’re headed, start here.</h2>
+              </div>
+              <p className="section-heading__copy">
+                Airport Express specializes in airport transportation and also takes trips beyond
+                the airport. Choose the ride that fits, then confirm your details with the team.
+              </p>
             </div>
-            <p className="section-heading__copy">
-              Airport Express specializes in airport transportation and also takes trips beyond the
-              airport. Choose the ride that fits, then confirm your details with the team.
-            </p>
-          </div>
 
-          <div className="service-list">
-            {services.map((service) => (
-              <Link className="service-row" href={service.href} key={service.title}>
-                <h3 className="service-row__title">{service.title}</h3>
-                <span aria-hidden="true" className="service-row__arrow">
-                  ↗
-                </span>
-                <p className="service-row__copy">{service.copy}</p>
-              </Link>
-            ))}
+            <div className="service-list">
+              {services.map((service) => (
+                <Link className="service-row" href={service.href} key={service.title}>
+                  <h3 className="service-row__title">{service.title}</h3>
+                  <span aria-hidden="true" className="service-row__arrow">
+                    ↗
+                  </span>
+                  <p className="service-row__copy">{service.copy}</p>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </HeroSectionTransition>
 
       <section aria-labelledby="area-title" className="section section--canvas">
         <div className="container region-section">
