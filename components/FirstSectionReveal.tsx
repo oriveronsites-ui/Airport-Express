@@ -37,12 +37,18 @@ export function FirstSectionReveal({ hero, children }: FirstSectionRevealProps) 
     // The homepage header keeps its existing floating-to-surface behavior.
     const header = document.querySelector<HTMLElement>(".site-header.is-home");
     let headerIsScrolled = window.scrollY > 28;
+    let frame = 0;
     const syncHeader = () => {
-      if (headerIsScrolled ? window.scrollY < 18 : window.scrollY > 38) {
-        headerIsScrolled = !headerIsScrolled;
-      }
-      const next = String(headerIsScrolled);
-      if (header && header.dataset.scrolled !== next) header.dataset.scrolled = next;
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const scrollY = window.scrollY;
+        if (headerIsScrolled ? scrollY < 18 : scrollY > 38) {
+          headerIsScrolled = !headerIsScrolled;
+        }
+        const next = String(headerIsScrolled);
+        if (header && header.dataset.scrolled !== next) header.dataset.scrolled = next;
+      });
     };
     syncHeader();
     window.addEventListener("scroll", syncHeader, { passive: true });
@@ -50,6 +56,7 @@ export function FirstSectionReveal({ hero, children }: FirstSectionRevealProps) 
     return () => {
       observer?.disconnect();
       window.removeEventListener("scroll", syncHeader);
+      if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
 
