@@ -23,7 +23,7 @@ export default function PoliciesPage() {
         </div>
       </section>
       <section className="page-section">
-        <div className="container content-split">
+        <div className="container content-split" data-motion="stagger">
           <div>
             <p className="eyebrow">Ask before you book</p>
             <h2>Get the terms that apply to your ride.</h2>

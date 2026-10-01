@@ -97,37 +97,49 @@ export default function HomePage() {
 
       <section aria-labelledby="area-title" className="section section--canvas">
         <div className="container region-section">
-          <div className="region-section__copy">
-            <p className="eyebrow">Where we go</p>
-            <h2 id="area-title">The airport is one stop in a much bigger region.</h2>
-            <p>
+          <div className="region-section__copy motion-sequence" data-motion="sequence">
+            <p className="eyebrow" data-motion-part="eyebrow">
+              Where we go
+            </p>
+            <div className="motion-heading-mask" data-motion-part="heading">
+              <h2 id="area-title">The airport is one stop in a much bigger region.</h2>
+            </div>
+            <p data-motion-part="copy">
               Airport Express provides transportation throughout an approximately 60-mile operating
               vicinity. The actual trip area depends on the destination and ride details.
             </p>
-            <Link className="text-link" href="/where-we-go">
+            <Link className="text-link" data-motion-part="action" href="/where-we-go">
               Explore the service area <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <RegionDiagram />
+          <RegionDiagram className="motion-image" data-motion="image" />
         </div>
       </section>
 
       <section aria-labelledby="airport-title" className="section">
         <div className="container">
           <div className="pickup-band">
-            <div>
-              <p className="eyebrow">Airport transportation</p>
-              <h2 id="airport-title">A clear next step when you land.</h2>
+            <div className="motion-sequence" data-motion="sequence">
+              <p className="eyebrow" data-motion-part="eyebrow">
+                Airport transportation
+              </p>
+              <div className="motion-heading-mask" data-motion-part="heading">
+                <h2 id="airport-title">A clear next step when you land.</h2>
+              </div>
             </div>
-            <div className="pickup-band__copy">
-              <p>
+            <div className="pickup-band__copy motion-sequence" data-motion="sequence">
+              <p data-motion-part="copy">
                 Pickup details can change by airport and reservation. Check the instructions in your
                 current confirmation. If you need help at SFO or OAK, call Airport Express.
               </p>
-              <a className="button button--red" href={`tel:${site.phoneHref}`}>
+              <a
+                className="button button--red"
+                data-motion-part="action"
+                href={`tel:${site.phoneHref}`}
+              >
                 Call {site.phoneDisplay}
               </a>
-              <p className="fine-print">
+              <p className="fine-print" data-motion-part="after-action">
                 The current booking system is operated on the Airport Express website.
               </p>
             </div>
@@ -138,16 +150,20 @@ export default function HomePage() {
       <section aria-labelledby="steps-title" className="section section--blue-wash">
         <div className="container">
           <div className="section-heading">
-            <div>
-              <p className="eyebrow">How it works</p>
-              <h2 id="steps-title">A simple way to plan the ride.</h2>
+            <div className="motion-sequence" data-motion="sequence">
+              <p className="eyebrow" data-motion-part="eyebrow">
+                How it works
+              </p>
+              <div className="motion-heading-mask" data-motion-part="heading">
+                <h2 id="steps-title">A simple way to plan the ride.</h2>
+              </div>
             </div>
-            <p className="section-heading__copy">
+            <p className="section-heading__copy" data-motion="rise">
               Use the current reservation system for available trips. For a destination or itinerary
               that needs a conversation, the Airport Express team is a phone call away.
             </p>
           </div>
-          <div className="process-grid">
+          <div className="process-grid" data-motion="stagger">
             <article className="process-step">
               <h3>Choose your trip</h3>
               <p>Airport, point-to-point, local, regional, group, or charter transportation.</p>
@@ -166,16 +182,22 @@ export default function HomePage() {
 
       <section aria-labelledby="groups-title" className="section">
         <div className="container heritage-split">
-          <div>
-            <p className="eyebrow">Groups and charters</p>
-            <h2 id="groups-title">A trip with more moving parts?</h2>
+          <div className="motion-sequence" data-motion="sequence">
+            <p className="eyebrow" data-motion-part="eyebrow">
+              Groups and charters
+            </p>
+            <div className="motion-heading-mask" data-motion-part="heading">
+              <h2 id="groups-title">A trip with more moving parts?</h2>
+            </div>
           </div>
-          <div className="heritage-split__copy">
-            <p>
+          <div className="heritage-split__copy motion-sequence" data-motion="sequence">
+            <p data-motion-part="copy">
               Tell Airport Express where you’re going and what you need to coordinate. The team can
               confirm whether the trip fits its current service and help with the right next step.
             </p>
-            <BookingLink custom>Ask about a custom trip</BookingLink>
+            <div data-motion-part="action">
+              <BookingLink custom>Ask about a custom trip</BookingLink>
+            </div>
           </div>
         </div>
       </section>
@@ -183,20 +205,24 @@ export default function HomePage() {
       <section aria-labelledby="about-title" className="section section--canvas">
         <div className="container">
           <div className="heritage-split">
-            <div>
-              <p className="eyebrow">Airport Express</p>
-              <h2 id="about-title">San Francisco transportation, beyond the airport.</h2>
+            <div className="motion-sequence" data-motion="sequence">
+              <p className="eyebrow" data-motion-part="eyebrow">
+                Airport Express
+              </p>
+              <div className="motion-heading-mask" data-motion-part="heading">
+                <h2 id="about-title">San Francisco transportation, beyond the airport.</h2>
+              </div>
             </div>
-            <div className="heritage-split__copy">
-              <p>
+            <div className="heritage-split__copy motion-sequence" data-motion="sequence">
+              <p data-motion-part="copy">
                 Airport Express is a San Francisco transportation company with airport transportation
                 as a specialty. It also offers private, point-to-point, local, regional, group, and
                 charter rides within its operating area.
               </p>
-              <Link className="text-link" href="/about">
+              <Link className="text-link" data-motion-part="action" href="/about">
                 About Airport Express <span aria-hidden="true">→</span>
               </Link>
-              <div className="trust-row">
+              <div className="trust-row" data-motion="stagger">
                 <div>
                   <h3>Airport rides</h3>
                   <p>Current site lists SFO and OAK transportation.</p>
@@ -217,17 +243,21 @@ export default function HomePage() {
 
       <section aria-labelledby="faq-title" className="section">
         <div className="container content-split">
-          <div>
-            <p className="eyebrow">Good to know</p>
-            <h2 id="faq-title">A few quick answers.</h2>
-            <p className="section-heading__copy">
+          <div className="motion-sequence" data-motion="sequence">
+            <p className="eyebrow" data-motion-part="eyebrow">
+              Good to know
+            </p>
+            <div className="motion-heading-mask" data-motion-part="heading">
+              <h2 id="faq-title">A few quick answers.</h2>
+            </div>
+            <p className="section-heading__copy" data-motion-part="copy">
               For current rates, pickup steps, and trip terms, use the reservation page or call.
             </p>
-            <Link className="text-link" href="/faq">
+            <Link className="text-link" data-motion-part="action" href="/faq">
               All frequently asked questions <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="faq-list">
+          <div className="faq-list" data-motion="stagger">
             {questions.map((item) => (
               <details key={item.question}>
                 <summary>{item.question}</summary>
@@ -240,13 +270,21 @@ export default function HomePage() {
 
       <section aria-labelledby="final-title" className="section section--canvas">
         <div className="container final-cta">
-          <div>
-            <p className="eyebrow">Ready when you are</p>
-            <h2 id="final-title">Let’s get your next trip moving.</h2>
+          <div className="motion-sequence" data-motion="sequence">
+            <p className="eyebrow" data-motion-part="eyebrow">
+              Ready when you are
+            </p>
+            <div className="motion-heading-mask" data-motion-part="heading">
+              <h2 id="final-title">Let’s get your next trip moving.</h2>
+            </div>
           </div>
-          <div className="final-cta__actions">
-            <BookingLink />
-            <p>Or call <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a></p>
+          <div className="final-cta__actions motion-sequence" data-motion="sequence">
+            <div data-motion-part="action">
+              <BookingLink />
+            </div>
+            <p data-motion-part="after-action">
+              Or call <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a>
+            </p>
           </div>
         </div>
       </section>

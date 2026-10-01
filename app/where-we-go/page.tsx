@@ -26,26 +26,30 @@ export default function WhereWeGoPage() {
       </section>
       <section aria-label="Illustrative Airport Express service area" className="page-section">
         <div className="container region-section">
-          <div className="region-section__copy">
-            <p className="eyebrow">One region, many kinds of trips</p>
-            <h2>Airport, local, and regional rides.</h2>
-            <p>
+          <div className="region-section__copy motion-sequence" data-motion="sequence">
+            <p className="eyebrow" data-motion-part="eyebrow">
+              One region, many kinds of trips
+            </p>
+            <div className="motion-heading-mask" data-motion-part="heading">
+              <h2>Airport, local, and regional rides.</h2>
+            </div>
+            <p data-motion-part="copy">
               The approximate service vicinity is a guide, not a promised boundary. The right trip
               depends on your pickup, destination, date, and current availability.
             </p>
-            <p>
+            <p data-motion-part="detail">
               The current Airport Express site lists SFO and OAK transportation and describes hourly
               trips around the greater San Francisco Bay Area.
             </p>
-            <a className="text-link" href={`tel:${site.phoneHref}`}>
+            <a className="text-link" data-motion-part="action" href={`tel:${site.phoneHref}`}>
               Call about a destination <span aria-hidden="true">→</span>
             </a>
           </div>
-          <RegionDiagram />
+          <RegionDiagram className="motion-image" data-motion="image" />
         </div>
       </section>
       <section className="page-section section--canvas">
-        <div className="container content-split">
+        <div className="container content-split" data-motion="stagger">
           <div>
             <p className="eyebrow">Not sure if your destination is covered?</p>
             <h2>Tell the team where you need to go.</h2>

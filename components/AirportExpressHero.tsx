@@ -180,6 +180,7 @@ export function AirportExpressHero() {
           alt="White Airport Express van with the company logo and phone number on its side"
           className="hero__van"
           fill
+          loading="eager"
           quality={92}
           sizes="(max-width: 760px) 100vw, (max-width: 1080px) 88vw, 68vw"
           src="/images/airport-express-van.webp"

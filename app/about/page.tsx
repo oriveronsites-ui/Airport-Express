@@ -23,7 +23,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="page-section">
-        <div className="container content-split">
+        <div className="container content-split" data-motion="stagger">
           <div>
             <p className="eyebrow">A practical way to get around</p>
             <h2>Airport trips are one part of the work.</h2>
@@ -42,7 +42,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="page-section section--canvas">
-        <div className="container content-split">
+        <div className="container content-split" data-motion="stagger">
           <div>
             <p className="eyebrow">The right next step</p>
             <h2>Keep the trip details simple.</h2>

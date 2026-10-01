@@ -56,7 +56,7 @@ export default function FaqPage() {
         </div>
       </section>
       <section className="page-section">
-        <div className="container content-split">
+        <div className="container content-split" data-motion="stagger">
           <div>
             <p className="eyebrow">Good to know</p>
             <h2>Before you ride.</h2>
@@ -64,7 +64,7 @@ export default function FaqPage() {
               For current rates and availability, use the reservation system or call {site.phoneDisplay}.
             </p>
           </div>
-          <div className="faq-list">
+          <div className="faq-list" data-motion="stagger">
             {questions.map((item) => (
               <details key={item.question}>
                 <summary>{item.question}</summary>

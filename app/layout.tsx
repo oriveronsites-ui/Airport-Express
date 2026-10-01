@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ViewportMotion } from "@/components/ViewportMotion";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html data-scroll-behavior="smooth" lang="en">
       <body>
         <SiteHeader />
+        <ViewportMotion />
         <main id="main-content">{children}</main>
         <SiteFooter />
         <MobileActionBar />

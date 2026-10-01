@@ -43,7 +43,7 @@ export default function ServicesPage() {
       </section>
       <section className="page-section">
         <div className="container">
-          <div className="service-list">
+          <div className="service-list" data-motion="stagger">
             {services.map(([title, href, copy]) => (
               <Link className="service-row" href={href} key={title}>
                 <h2 className="service-row__title">{title}</h2>

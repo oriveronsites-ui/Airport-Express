@@ -1,8 +1,11 @@
-export function RegionDiagram() {
+import type { ComponentProps } from "react";
+
+export function RegionDiagram({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
+      {...props}
       aria-label="Illustrative route diagram showing SFO, San Francisco, OAK, and a destination to confirm. It does not show exact routes or boundaries."
-      className="region-diagram"
+      className={`region-diagram${className ? ` ${className}` : ""}`}
       role="img"
     >
       <span className="region-diagram__node">SFO</span>

@@ -25,7 +25,7 @@ export default function ContactPage() {
       </section>
       <section className="page-section">
         <div className="container">
-          <div className="contact-options">
+          <div className="contact-options" data-motion="stagger">
             <section className="contact-option">
               <h2>Call</h2>
               <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a>
@@ -37,14 +37,14 @@ export default function ContactPage() {
               <p>Share your route and what you need help arranging.</p>
             </section>
           </div>
-          <div className="callout-line">
+          <div className="callout-line" data-motion="rise">
             <p>Want to check current rates and options?</p>
             <BookingLink />
           </div>
         </div>
       </section>
       <section className="page-section section--canvas">
-        <div className="container content-split">
+        <div className="container content-split" data-motion="stagger">
           <div>
             <p className="eyebrow">Need quick help?</p>
             <h2>Pick up the phone.</h2>
