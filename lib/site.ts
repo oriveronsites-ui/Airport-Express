@@ -8,7 +8,8 @@ export const site = {
   email: "info@airportexpresssf.com",
   reservationUrl: "https://airportexpresssf.com/reservation",
   customTripUrl: "https://airportexpresssf.com/reservation?types=inquire",
-  logo: "/images/airport-express-logo.jpg",
+  logo: "/images/airport-express-logo.png",
+  shareImage: "/images/airport-express-social.webp",
 } as const;
 
 export const navigation = [

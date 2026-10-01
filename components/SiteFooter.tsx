@@ -21,9 +21,9 @@ export function SiteFooter() {
             <Link aria-label="Airport Express home" href="/">
               <Image
                 alt="Airport Express"
-                height={78}
-                src="/images/airport-express-footer-logo.png"
-                width={210}
+                height={766}
+                src={site.logo}
+                width={2053}
               />
             </Link>
             <p>San Francisco transportation, from airport rides to trips around the Bay.</p>

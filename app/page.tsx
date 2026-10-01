@@ -1,6 +1,6 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AirportExpressHero } from "@/components/AirportExpressHero";
 import { BookingLink } from "@/components/BookingLink";
 import { RegionDiagram } from "@/components/RegionDiagram";
 import { site } from "@/lib/site";
@@ -61,43 +61,7 @@ const questions = [
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="hero">
-        <div className="hero__copy">
-          <p className="eyebrow">Airport Express · San Francisco</p>
-          <h1 id="hero-title">Airport rides. Trips beyond.</h1>
-          <p className="hero__lead">
-            Airport transportation to or from SFO and OAK, plus private trips throughout an
-            approximately 60-mile operating area.
-          </p>
-          <p className="hero__note">Going somewhere specific? Call to confirm your destination.</p>
-          <div className="hero__actions">
-            <BookingLink />
-            <Link className="text-link" href="/services">
-              Explore services <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-          <ul aria-label="Airport Express service highlights" className="hero__detail">
-            <li>SFO</li>
-            <li>OAK</li>
-            <li>Across the Bay</li>
-          </ul>
-        </div>
-        <figure className="hero__visual">
-          <Image
-            alt="San Francisco skyline across the Bay, with the Bay Bridge in the distance"
-            className="hero__image"
-            height={853}
-            priority
-            sizes="(max-width: 760px) 100vw, 52vw"
-            src="/images/san-francisco-bay.webp"
-            width={1280}
-          />
-          <figcaption className="hero__visual-caption">
-            <span>Beyond the terminal</span>
-            <strong>Make the Bay Area part of the plan.</strong>
-          </figcaption>
-        </figure>
-      </section>
+      <AirportExpressHero />
 
       <section aria-labelledby="services-title" className="section">
         <div className="container">

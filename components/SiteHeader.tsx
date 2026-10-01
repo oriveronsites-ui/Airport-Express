@@ -23,10 +23,10 @@ export function SiteHeader() {
           <Image
             alt="Airport Express"
             className="brand-link__image"
-            height={75}
+            height={766}
             priority
             src={site.logo}
-            width={201}
+            width={2053}
           />
         </Link>
 

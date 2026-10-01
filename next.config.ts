@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   devIndicators: false,
+  images: {
+    qualities: [75, 86, 92],
+  },
   async redirects() {
     return [
       { source: "/sitepages/topic/1", destination: "/about", permanent: true },

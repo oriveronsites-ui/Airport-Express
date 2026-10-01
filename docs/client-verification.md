@@ -35,6 +35,6 @@ Items below are intentionally omitted or qualified in the development site until
 ## Brand and trust content
 
 - [ ] Confirm the “Since 1979” statement.
-- [ ] Supply the current vector or high-resolution Airport Express logo, if available.
-- [ ] Confirm whether the 640 × 385 px branded van photo is current and approved for reuse.
+- [ ] Confirm whether a vector master exists for the supplied enhanced Airport Express logo.
+- [ ] Confirm that the supplied Airport Express van image depicts a currently representative vehicle and is approved as brand photography.
 - [ ] Provide current company history and any approved trust claims or partnerships.

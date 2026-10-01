@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     url: site.url,
     images: [
       {
-        url: "/images/san-francisco-bay.jpg",
-        width: 1280,
-        height: 853,
-        alt: "San Francisco skyline across the Bay",
+        url: site.shareImage,
+        width: 1200,
+        height: 630,
+        alt: "Airport Express van against a San Francisco Bay background",
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Airport Express | San Francisco transportation",
     description: site.shortDescription,
-    images: ["/images/san-francisco-bay.jpg"],
+    images: [site.shareImage],
   },
   icons: {
     icon: "/favicon.ico",
@@ -54,7 +54,7 @@ const structuredData = {
   url: site.url,
   telephone: site.phoneDisplay,
   email: site.email,
-  image: `${site.url}/images/san-francisco-bay.jpg`,
+  image: `${site.url}${site.shareImage}`,
   description: site.shortDescription,
   areaServed: "San Francisco Bay Area",
   serviceType: [

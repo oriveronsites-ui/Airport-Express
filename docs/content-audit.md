@@ -69,6 +69,18 @@
 - The first build uses one locally stored **Pixabay** San Francisco Bay / bridge photo by **xiSerge**, source page: [Bridge, San Francisco Bay, Skyline](https://pixabay.com/photos/bridge-san-francisco-bay-skyline-7396644/). Pixabay labels it free under its [Content License](https://pixabay.com/service/license-summary/); the selected downloaded size is 1280 × 853. The license summary allows free use and modification subject to its prohibited uses and reminds users to check third-party rights. Do not use it as a brand/logo mark or in a misleading way.
 - No stock image is used to imply Airport Express owns a particular vehicle or serves a specific destination.
 
+## Updated logo and cinematic hero assets
+
+- The owner supplied a new transparent **2053 × 766 px** Airport Express logo and a transparent **2004 × 785 px** Airport Express van image. The originals are stored at `public/images/airport-express-logo.png` and `public/images/airport-express-van.png` and are used without redrawing. Their aspect ratios are preserved. Header, mobile header, footer, favicon, Apple touch icon, and social preview now use the supplied brand artwork. The hero uses a high-quality WebP derivative of the van while retaining the original PNG in the project.
+- The hero cycles through a curated set of four local photographs. Each source page identified the photo as free under the Pixabay Content License at the time it was reviewed; the files are used as backgrounds in a composed website experience, not distributed as standalone downloads. The [current license summary](https://pixabay.com/service/license-summary/) permits free use and adaptation subject to prohibited uses and asks users to consider other intellectual-property rights.
+  - San Francisco Bay and skyline, contributor xiSerge: [Pixabay source](https://pixabay.com/photos/bridge-san-francisco-bay-skyline-7396644/).
+  - Golden Gate Bridge, contributor derwiki: [Pixabay source](https://pixabay.com/photos/golden-gate-bridge-san-francisco-532852/).
+  - San Francisco skyline in fog, contributor tealyea: [Pixabay source](https://pixabay.com/photos/san-francisco-fog-city-skyline-1045789/).
+  - Twin Peaks, San Francisco, contributor tda3: [Pixabay source](https://pixabay.com/photos/san-francisco-twin-peaks-expedition-867133/).
+- The four background photographs are stored as optimized local WebP files in `public/images/hero/`. Scene labels identify what is pictured; they do not establish guaranteed service destinations. The van remains stationary during the crossfade. Reduced-motion visitors receive the first scene without the automatic transitions or Ken Burns movement.
+- A San Francisco Bay social preview image combines the supplied logo and van with the Bay photograph. The full original new PNGs remain available for future high-density uses.
+- A San Francisco cable-car candidate was reviewed and excluded because the photograph visibly contains third-party advertising/branding and people. It is not part of the shipped imagery.
+
 ## Legacy paths worth preserving during launch planning
 
 - `/reservation`
