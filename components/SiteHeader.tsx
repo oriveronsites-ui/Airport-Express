@@ -2,14 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { navigation, site } from "@/lib/site";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const isHome = usePathname() === "/";
+
+  useEffect(() => {
+    const updateScrollState = () => setScrolled(window.scrollY > 28);
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
 
   return (
-    <header className="site-header">
+    <header className={`site-header${isHome ? " is-home" : ""}${isHome && scrolled ? " is-scrolled" : ""}`}>
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
@@ -29,6 +39,16 @@ export function SiteHeader() {
             width={2053}
           />
         </Link>
+
+        <a
+          aria-label="Book a ride"
+          className="mobile-book-link"
+          href={site.reservationUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Book <span aria-hidden="true">↗</span>
+        </a>
 
         <button
           aria-controls="primary-navigation"
