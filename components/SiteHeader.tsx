@@ -3,23 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { navigation, site } from "@/lib/site";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const isHome = usePathname() === "/";
 
-  useEffect(() => {
-    const updateScrollState = () => setScrolled(window.scrollY > 28);
-    updateScrollState();
-    window.addEventListener("scroll", updateScrollState, { passive: true });
-    return () => window.removeEventListener("scroll", updateScrollState);
-  }, []);
-
   return (
-    <header className={`site-header${isHome ? " is-home" : ""}${isHome && scrolled ? " is-scrolled" : ""}`}>
+    <header className={`site-header${isHome ? " is-home" : ""}`}>
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>

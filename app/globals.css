@@ -203,11 +203,11 @@ p {
     backdrop-filter 220ms ease;
 }
 
-.site-header.is-home.is-scrolled {
+.site-header.is-home[data-scrolled="true"] {
   top: 8px;
 }
 
-.site-header.is-home.is-scrolled .site-header__inner {
+.site-header.is-home[data-scrolled="true"] .site-header__inner {
   min-height: 68px;
   padding-block: 5px;
   border-color: rgb(255 255 255 / 13%);
