@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AirportTransportationPage() {
   return (
     <ServicePage
-      description="Airport transportation is a core Airport Express service. The current site lists trips to and from San Francisco International Airport (SFO) and Oakland International Airport (OAK)."
+      description="Airport Express offers transportation to and from San Francisco International Airport (SFO) and Oakland International Airport (OAK). Confirm the details for your trip before you travel."
       details={[
         "San Francisco International Airport (SFO)",
         "Oakland International Airport (OAK)",

@@ -35,8 +35,8 @@ export default function AboutPage() {
               ride.
             </p>
             <p>
-              Share the locations and timing you have in mind. Use the current reservation system
-              for listed options, or call if the trip is more involved.
+              Share the locations and timing you have in mind. Review online booking options, or call
+              Airport Express to talk through a more involved trip.
             </p>
           </div>
         </div>

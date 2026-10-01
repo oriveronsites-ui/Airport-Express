@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/home", destination: "/", permanent: true },
       { source: "/sitepages/topic/1", destination: "/about", permanent: true },
       { source: "/sitepages/topic/3", destination: "/policies", permanent: true },
       { source: "/sitepages/topic/7", destination: "/faq", permanent: true },

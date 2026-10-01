@@ -8,7 +8,7 @@ Items below are intentionally omitted or qualified in the development site until
 - [ ] Confirm info@airportexpresssf.com is monitored and suitable for customer contact.
 - [ ] Confirm whether 910 Harrison Street, San Francisco, CA 94109 is current and whether it should be published as a visitor-facing address, mailing address, or omitted.
 - [ ] Confirm that https://airportexpresssf.com/reservation is the current booking destination and works end-to-end on mobile.
-- [ ] Confirm the correct online path for private/hourly trips, groups/charters, and custom-trip inquiries.
+- [ ] Confirm that `/reservation?types=hourly` is the approved current path for private/hourly trips and `/reservation?types=inquire` is the approved path for groups, charters, and custom inquiries. Both options appear in the public reservation flow, but form submission has not been tested.
 - [ ] Confirm payment methods and when a reservation is considered confirmed.
 
 ## Service area and service details

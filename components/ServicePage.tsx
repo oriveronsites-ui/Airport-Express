@@ -9,6 +9,7 @@ export function ServicePage({
   details,
   note,
   custom = false,
+  hourly = false,
 }: {
   eyebrow: string;
   title: string;
@@ -16,6 +17,7 @@ export function ServicePage({
   details: string[];
   note: string;
   custom?: boolean;
+  hourly?: boolean;
 }) {
   return (
     <>
@@ -25,8 +27,8 @@ export function ServicePage({
             <p>{description}</p>
           </PageIntro>
           <div className="hero__actions">
-            <BookingLink custom={custom}>
-              {custom ? "Ask about a trip" : "Check current options"}
+            <BookingLink custom={custom} hourly={hourly}>
+              {custom ? "Ask about a trip" : hourly ? "Check hourly options" : "Check current options"}
             </BookingLink>
             <a className="text-link" href={`tel:${site.phoneHref}`}>
               Call {site.phoneDisplay}
@@ -63,7 +65,7 @@ export function ServicePage({
               <h2>Ready to plan your trip?</h2>
             </div>
             <div className="final-cta__actions">
-              <BookingLink custom={custom} />
+              <BookingLink custom={custom} hourly={hourly} />
               <p>
                 Or call <a href={`tel:${site.phoneHref}`}>{site.phoneDisplay}</a>
               </p>

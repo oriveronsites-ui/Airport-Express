@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function PrivateTransportationPage() {
   return (
     <ServicePage
+      hourly
       description="Not headed to an airport? Airport Express also provides private and point-to-point transportation within its operating area. Share the route you have in mind and confirm availability with the team."
       details={[
         "Direct rides between confirmed locations",

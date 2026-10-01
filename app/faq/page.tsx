@@ -18,7 +18,7 @@ const questions = [
   {
     question: "Which airports do you serve?",
     answer:
-      "The current Airport Express website lists San Francisco International Airport (SFO) and Oakland International Airport (OAK). Check the current reservation options or call to confirm your trip.",
+      "Airport Express offers airport transportation to and from San Francisco International Airport (SFO) and Oakland International Airport (OAK). Check the booking options or call to confirm your trip details.",
   },
   {
     question: "Is my destination within the service area?",
@@ -28,7 +28,7 @@ const questions = [
   {
     question: "How do I book a ride?",
     answer:
-      "Continue to the current Airport Express reservation page to check rates and submit a booking, or call (415) 775-5121 for help with a custom trip.",
+      "Use the online reservation page to check rates and submit a booking, or call (415) 775-5121 to discuss a custom trip.",
   },
   {
     question: "Where can I find airport pickup instructions?",

@@ -7,6 +7,7 @@ export const site = {
   phoneHref: "+14157755121",
   email: "info@airportexpresssf.com",
   reservationUrl: "https://airportexpresssf.com/reservation",
+  hourlyTripUrl: "https://airportexpresssf.com/reservation?types=hourly",
   customTripUrl: "https://airportexpresssf.com/reservation?types=inquire",
   logo: "/images/airport-express-logo.png",
   shareImage: "/images/airport-express-social.webp",

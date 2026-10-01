@@ -45,7 +45,7 @@ const questions = [
   {
     question: "Which airports can I book?",
     answer:
-      "The current Airport Express site lists San Francisco International Airport (SFO) and Oakland International Airport (OAK). Check current availability in the reservation system or call before you travel.",
+      "Airport Express offers airport trips to and from San Francisco International Airport (SFO) and Oakland International Airport (OAK). Check the booking options or call to confirm your trip details.",
   },
   {
     question: "How do I get pickup instructions?",
@@ -139,9 +139,6 @@ export default function HomePage() {
               >
                 Call {site.phoneDisplay}
               </a>
-              <p className="fine-print" data-motion-part="after-action">
-                The current booking system is operated on the Airport Express website.
-              </p>
             </div>
           </div>
         </div>
@@ -159,7 +156,7 @@ export default function HomePage() {
               </div>
             </div>
             <p className="section-heading__copy" data-motion="rise">
-              Use the current reservation system for available trips. For a destination or itinerary
+              Check online booking options for available trips. For a destination or itinerary
               that needs a conversation, the Airport Express team is a phone call away.
             </p>
           </div>
@@ -225,7 +222,7 @@ export default function HomePage() {
               <div className="trust-row" data-motion="stagger">
                 <div>
                   <h3>Airport rides</h3>
-                  <p>Current site lists SFO and OAK transportation.</p>
+                  <p>Transportation to and from SFO and OAK.</p>
                 </div>
                 <div>
                   <h3>More than airport trips</h3>

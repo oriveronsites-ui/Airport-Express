@@ -38,8 +38,8 @@ export default function WhereWeGoPage() {
               depends on your pickup, destination, date, and current availability.
             </p>
             <p data-motion-part="detail">
-              The current Airport Express site lists SFO and OAK transportation and describes hourly
-              trips around the greater San Francisco Bay Area.
+              Book airport transportation to or from SFO or OAK, or choose an hourly trip around the
+              San Francisco Bay Area. Call to confirm your specific route.
             </p>
             <a className="text-link" data-motion-part="action" href={`tel:${site.phoneHref}`}>
               Call about a destination <span aria-hidden="true">→</span>
